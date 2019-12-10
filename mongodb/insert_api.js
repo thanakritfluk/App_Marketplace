@@ -1,11 +1,12 @@
 const axios = require("axios");
+var env = require('dotenv').config();
 // url for database
-var url = "mongodb+srv://admin:TI5kgni0wrEkNCX3@cluster0-ngbcy.mongodb.net/test?retryWrites=true&w=majority";
+var url = "mongodb+srv://admin:"+process.env.MONGO_PASS+"@cluster0-ngbcy.mongodb.net/test?retryWrites=true&w=majority";
 // create a client to mongodb
 var MongoClient = require('mongodb').MongoClient;
 var DataBaseName = "App_marketplace"; 
 // option to api
-const token = "44e5e041bb566e20bf20472dac1624e448796018";
+const token = process.env.TOKEN;
 const limit_number = "100";
 // url to api
 const android_free_url = "https://data.42matters.com/api/v2.0/android/apps/top_google_charts.json?list_name=topselling_free&cat_key=OVERALL&country=US&limit="+limit_number+"&access_token="+token;
@@ -147,3 +148,6 @@ async function setup_all_data(){
     var ios_paid_app = await insert_data("Ios",ios_paid_url,"Ios_app_paid")
     var ios_free_app = await insert_data("Ios",ios_free_url,"Ios_app_free")
 }
+
+
+setup_all_data();
