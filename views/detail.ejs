@@ -1,91 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Detail</title>
     <link rel="stylesheet" href="/stylesheets/detail_style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  </head>
-  <body class="page">
-    <div class="topnav">
-      <a class="logo" href="#home">LOGO</a>
+</head>
+
+<body class="page">
+    <div class="page_child">
+        <nav class="topnav navbar-dark bg-dark">
+            <a class="logo" href="/">LOGO</a>
+        </nav>
+
+        <div class="application-box">
+            <div class="application-details">
+                <div class="header-box">
+                    <div class="image col-2">
+                        <img src="/images/eg_app.png" style="width:150px;" />
+                    </div>
+                    <div class="box_format col-5">
+                        <h1 class="box_format_head">Angry Birds</h1>
+                        <h3 class="age_res_head">18+</h3>
+                        <h3 class="rating_head">3.5 Ratings</h3>
+                        <h3 class="genre_head"> Games</h3>
+                    </div>
+
+                </div>
+
+                <hr class="sep_line app_desc" />
+                <div class="box_format">
+                    <h2 class="box_format_head">Description</h2>
+                    <p class="app_desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
+                        quibusdam officia error repellendus nisi eligendi. Vero ipsam labore
+                        reiciendis quis a temporibus fuga voluptatibus quasi, facilis velit
+                        accusantium cumque magni... Read more
+                    </p>
+                </div>
+                <hr class="sep_line app_desc" />
+
+                <div class="big_half_box">
+                    <div class="half_box">
+                        <h2 class="head_down">What's new</h2>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
+                            quibusdam officia error repellendus nisi eligendi. Vero ipsam
+                            labore reiciendis quis a temporibus fuga voluptatibus quasi,
+                            facilis velit accusantium cumque magni... Read more
+                        </p>
+                    </div>
+                    <div class="half_box" style="text-align: center;">
+                        <h2 class="head_down">Download</h2>
+                        <img src="/images/appstore.png" class="download_button" />
+                        <img src="/images/playstore.png" class="download_button" />
+                    </div>
+                </div>
+
+                <hr class="sep_line app_desc" />
+
+                <div class="box_format">
+                    <h2 class="box_format_head">Preview</h2>
+                    <div class="preview-box" style="margin-top: 1rem;">
+                        <img class="preview-img" src="/images/IMG_0594.PNG" style="width:250px" />
+                        <img class="preview-img" src="/images/IMG_0595.PNG" style="width:250px" />
+                        <img class="preview-img" src="/images/IMG_0595.PNG" style="width:250px" />
+                        <img class="preview-img" src="/images/IMG_0595.PNG" style="width:250px" />
+                        <img class="preview-img" src="/images/IMG_0595.PNG" style="width:250px" />
+                        <img class="preview-img" src="/images/IMG_0595.PNG" style="width:250px" />
+                        <img class="preview-img" src="/images/IMG_0595.PNG" style="width:250px" />
+                        <img class="preview-img" src="/images/IMG_0595.PNG" style="width:250px" />
+
+                    </div>
+                </div>
+                <hr class="sep_line app_desc" />
+
+
+                <div class="box_format">
+                    <h2 class="box_format_head">Ratings</h2>
+                    <div class="half_rating">
+                        <h1 class="big_rating">3.5</h1>
+                        <h3 id="outOf"> out of 5</h3>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                        <canvas id="rating_chart"></canvas>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-    <div class="application-box">
-      <div class="application-details">
-        <div class="image col-2">
-          <img src="/images/eg_app.png" style="width:100px" />
-        </div>
-        <div class="box_format col-2">
-          <h1 id="box_format_head">Angry Birds</h1>
-          <h3 id="app_desc">Everyone (age restriction)</h3>
-          <h3 id="app_desc">3.5 Ratings</h3>
-        </div>
-        <hr id="app_desc" />
-        <div class="box_format">
-          <h2 id="box_format_head">Description</h2>
-          <p id="app_desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
-            quibusdam officia error repellendus nisi eligendi. Vero ipsam labore
-            reiciendis quis a temporibus fuga voluptatibus quasi, facilis velit
-            accusantium cumque magni... Read more
-          </p>
-        </div>
-        <hr id="app_desc" />
 
-        <div class="big_half_box">
-          <div class="half_box">
-            <h2 id="head_down">What's new</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
-              quibusdam officia error repellendus nisi eligendi. Vero ipsam
-              labore reiciendis quis a temporibus fuga voluptatibus quasi,
-              facilis velit accusantium cumque magni... Read more
-            </p>
-          </div>
-          <div class="half_box" style="text-align: center;">
-            <h2 id="head_down">Download</h2>
-            <img src="/images/appstore.png" class="download_button"/>
-            <img src="/images/playstore.png" class="download_button"/>
-        </div>
-        </div>
-
-        <hr id="app_desc" />
-
-        <div class="box_format">
-            <h2 id="box_format_head">Preview</h2>
-            <div class="preview-box" style="margin-top: 1rem;">
-                <img class= "preview-img" src="/images/IMG_0594.PNG" style="width:250px" />
-                <img class= "preview-img" src="/images/IMG_0595.PNG" style="width:250px" />
-                <img class= "preview-img" src="/images/IMG_0595.PNG" style="width:250px" />
-                <img class= "preview-img" src="/images/IMG_0595.PNG" style="width:250px" />
-                <img class= "preview-img" src="/images/IMG_0595.PNG" style="width:250px" />
-                <img class= "preview-img" src="/images/IMG_0595.PNG" style="width:250px" />
-                <img class= "preview-img" src="/images/IMG_0595.PNG" style="width:250px" />
-                <img class= "preview-img" src="/images/IMG_0595.PNG" style="width:250px" />
-           
-            </div>
-        </div>      
-        <hr id="app_desc" />
-
-        
-        <div class="box_format">
-            <h2 id="box_format_head">Ratings</h2>
-            <div class="half_rating">
-                <h1 class="big_rating">3.5</h1>
-                <h3 id="outOf"> out of 5</h3>
-            </div>
-            
-        </div>
-
-      </div>
-    </div>
 
     <!-- 
     <div class="container ">
@@ -101,6 +113,16 @@
       </div>
 
     </div> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+    <script src="/javascripts/rating_chart.js"></script>
    
-  </body>
+</body>
+
 </html>
