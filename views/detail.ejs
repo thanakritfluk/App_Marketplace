@@ -16,7 +16,7 @@
 <body class="page">
     <div class="page_child">
         <nav class="topnav navbar-dark bg-dark">
-            <a class="logo" href="/">LOGO</a>
+            <a class="logo" href="/">APP MARKETPLACE</a>
         </nav>
 
         <div class="application-box">
@@ -28,7 +28,8 @@
                     <div class="box_format col-5">
                         <h1 class="box_format_head">Angry Birds</h1>
                         <h3 class="age_res_head">18+</h3>
-                        <h3 class="rating_head">3.5 Ratings</h3>
+                        <h3 class="price_head">$ 0.99</h3>
+                        <!-- if price == 0 then Free -->
                         <h3 class="genre_head"> Games</h3>
                     </div>
 
@@ -58,8 +59,12 @@
                     </div>
                     <div class="half_box" style="text-align: center;">
                         <h2 class="head_down">Download</h2>
-                        <img src="/images/appstore.png" class="download_button" />
-                        <img src="/images/playstore.png" class="download_button" />
+                        <a href="">
+                            <img src="/images/appstore.png" class="download_button" />
+                        </a>
+                        <a href="">
+                            <img src="/images/playstore.png" class="download_button" />
+                        </a>
                     </div>
                 </div>
 
@@ -85,12 +90,22 @@
                 <div class="box_format">
                     <h2 class="box_format_head">Ratings</h2>
                     <div class="half_rating">
-                        <h1 class="big_rating">3.5</h1>
-                        <h3 id="outOf"> out of 5</h3>
+                        <div class="rating-con container">
+                            <div class="row">
+                                <h1 class="big_rating">3.5</h1>
+                                <h3 id="outOf"> out of 5</h3>
+                            </div>
+                            <div class="row amount_rate_box">
+                                <div class="amount_ratings">20990</div>
+                                <div id="ratings_text">Ratings</div>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
                 <div class="chart-wrapper">
-                        <canvas id="rating_chart"></canvas>
+                    <canvas id="rating_chart"></canvas>
                 </div>
 
             </div>
@@ -113,16 +128,18 @@
       </div>
 
     </div> -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
     <script src="/javascripts/rating_chart.js"></script>
-   
+
 </body>
 
 </html>

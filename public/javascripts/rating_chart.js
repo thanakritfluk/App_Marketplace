@@ -1,19 +1,35 @@
+var rating_data = '';
+
+//mock json file for line chart
+//mock json file for pie chart
+var jsonfile = {
+    "App": [{
+      "App_ratings": [6488,2615,3229,6182,32065] 
+    }]
+  };
+
+rating_data = jsonfile.App.map(function(e) {
+    return e.App_ratings;
+});;
+
+console.log(rating_data);
+
 var ctx = $("#rating_chart");
 var config = {
-  type: "bar",
+  type: "horizontalBar",
   data: {
     labels: ["1", "2", "3", "4", "5"],
     datasets: [
       {
         label: "# of Ratings",
-        data: [12, 19, 3, 5, 2],
+        data: rating_data[0],
         backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)"
+          "rgba(255, 99, 132, 0.5)",
+          "rgba(54, 162, 235, 0.5)",
+          "rgba(255, 206, 86, 0.5)",
+          "rgba(75, 192, 192, 0.5)",
+          "rgba(153, 102, 255, 0.5)",
+          "rgba(255, 159, 64, 0.5)"
         ],
         borderColor: [
           "rgba(255, 99, 132, 1)",
@@ -23,7 +39,8 @@ var config = {
           "rgba(153, 102, 255, 1)",
           "rgba(255, 159, 64, 1)"
         ],
-        borderWidth: 0.5
+        borderWidth: 0.5,
+        barPercentage: 0.4
       }
     ]
   },
@@ -39,8 +56,8 @@ var config = {
         yAxes: [{
             ticks: {
                 fontColor: "white",
-                fontSize: 14,
-                stepSize: 1,
+                fontSize: 16,
+                stepSize: 1000,
                 beginAtZero: true,
                 fontFamily: "'Sulphur Point', sans-serif"
             },
@@ -52,15 +69,16 @@ var config = {
         xAxes: [{
             ticks: {
                 fontColor: "white",
-                fontSize: 14,
-                stepSize: 1,
+                fontSize: 12,
+                stepSize: 1000,
                 beginAtZero: true,
                 fontFamily: "'Sulphur Point', sans-serif"
             },
             gridLines: {
                 color: "#666666"
               },
-        }]
+
+        }],
 }
   }};
 

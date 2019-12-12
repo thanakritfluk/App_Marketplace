@@ -27,6 +27,9 @@ body {
     height: 2.5rem;
     align-content: center;
     position: fixed;
+    left: 0;
+    z-index: 100;
+
 }
 
 .topnav a {
@@ -43,7 +46,7 @@ body {
 .topnav a:hover {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    text-shadow: 0.1px 0px 5px floralwhite;
 }
 .main_box {
     max-width: 800px;
@@ -107,10 +110,18 @@ nav ul {
     text-align: center;
 }
 
-.rating_head {
-    font-size: 24px;
+.price_head {
+    font-size: 22px;
     font-style: italic;
     margin-bottom: 0;
+    background-color: #222222;
+    width: 5rem;
+    text-align: center;
+    height: 2rem;
+    border: solid 0.5px #222222;
+    padding-top: 0.2rem;
+    border-radius: 10px;
+    padding-right: 0.2rem;
 }
 .genre_head {
     font-size: 26px;
@@ -137,6 +148,8 @@ nav ul {
 .head_down {
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
+    color: whitesmoke;
+    text-shadow: 1px 1px 5px black;
 }
 
 .half_box {
@@ -145,12 +158,20 @@ nav ul {
 }
 
 .box_format_head {
-    margin: top 0.5rem;
     color: whitesmoke;
+    text-shadow: 1px 1px 5px black;
 }
 
 .download_button{
     width: 6rem;
+    height: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.download_button:hover {
+    border: solid 1px #ffffff;
+    border-radius:5px;
 }
 
 .app_desc {
@@ -229,6 +250,34 @@ body::-webkit-scrollbar {
   }
 
   #rating_chart {
-      width: 30rem;
-      height: auto;
+      width: auto;
+      height: 13rem;
+  }
+
+  .amount_ratings {
+    font-size: 20px;
+    opacity: 0.8;
+    font-weight: bold;
+    margin-right: 1rem;
+    letter-spacing: 2px;
+    margin-left: 1rem;
+
+  }
+
+  #ratings_text {
+    font-size: 20px;
+    opacity: 0.8;
+    font-weight: bold;
+    margin-right: 1rem;
+    letter-spacing: 2px;
+
+  }
+
+  .amount_rate_box {
+    border: solid 0.5px white;
+    opacity: 0.8;
+    border-radius: 50px;
+    text-align: center;
+    width: 13rem;
+    padding-left: 1rem;
   }
