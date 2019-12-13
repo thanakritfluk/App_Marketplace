@@ -281,3 +281,27 @@ body::-webkit-scrollbar {
     width: 13rem;
     padding-left: 1rem;
   }
+
+  
+
+  .ava-box {
+      display: inline-flex;
+    float: right;
+    border: solid 1px #2ab52a;
+    border-radius: 5px;
+    padding: 0.3rem;
+    background-color: #2ab52a;
+    color: white;
+    font-weight: 500;
+}
+
+.unava-box {
+    display: inline-flex;
+    float: right;
+    border: solid 1px #dc3545;
+    border-radius: 5px;
+    padding: 0.3rem;
+    background-color: #dc3545;
+    color: white;
+    font-weight: 500;
+}
