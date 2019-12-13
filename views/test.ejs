@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/javascripts/index.js"></script>
+    <link rel="stylesheet" href="animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma" rel=stylesheet>
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <title>Application Marketplace</title>
+</head>
+
+<body class="chfont bg">
+
+    <!--banner-->
+    <div class="container-fluid w3-section">
+        <img class="mySlides w3-animate-fading" id="banner" alt="Lights" width=100% src="/images/banner.jpg">
+        <div class="w3-display-topmiddle w3-text-white w3-jumbo" id="apptitle">APP MARKETPLACE</div>
+        <div class="w3-display-bottommiddle d-flex">
+            <div class="searchbar w3-animate-top">
+                <input class="search_input" type="text" name="" placeholder="Search...">
+                <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!--category carousel-->
+    <div class="container">
+        <div class="row">
+            <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
+                <div class="MultiCarousel-inner">
+                    <div class="item">
+                        <div class="pad15">
+                            <a href="/">
+                                <p class="lead">Action</p>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                            <p class="lead">Adventure</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                            <p class="lead">Board</p>
+
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                            <p class="lead">Educational</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                            <p class="lead">Family</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                            <p class="lead">Music</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                            <p class="lead">Racing</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                            <p class="lead">Sports</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="pad15">
+                            <p class="lead">Word</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary leftLst">
+                    <</button> <button class="btn btn-primary rightLst">>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <br /><br /><br />
+                <hr />
+                <p>Settings</p>
+                <p>Change data items for xs,sm,md and lg display items respectively. Ex:data-items="1,3,5,6"</p>
+                <p>Change data slide for slides per click Ex:data-slide="1"</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--App card-->
+    <div class="container-fluid w3-section">
+        <div class="row" style="height: 200px;">
+            <div class="column">
+                <div class="w3-container w3-red w3-cell">
+                    <img src="/images/facebook.png" style="width: 80px; height: 100px; align-content: center;">
+                </div>
+                <!--containerred-->
+            </div>
+            <!--column-->
+            <div class="column">
+                <div class="appbox">
+                    <img src="/images/instagram.jpg" style="width: 100px; height: 100px; align-content: center;">
+                    <div class="w3-container w3-green w3-cell" id="green">
+                        <p>App name: Facebook</p>
+                        <p>Rating: ######</p>
+                    </div>
+                </div>
+                <!--containergreen-->
+                <!--appbox-->
+            </div>
+            <!--column-->
+        </div>
+        <!--row-->
+    </div>
+    <!--container-->
+
+
+    <!--home button-->
+    <div class=" container fluid w3-section">
+        <div class="endpage row">
+            <div class="w3-center box">
+                <a href="/" class="btn btn-white btn-animation-1"><i class="fa fa-home" style="color: #4A4843;"
+                        aria-hidden="true"></i></a>
+            </div>
+            <!--next and previous page button control-->
+            <div class="w3-center" id="nextpage">
+                <div class="w3-bar">
+                    <a href="" id="back" class="w3-bar-item w3-button w3-hover-black">«</a>
+                    <a href="" id="next" class="w3-bar-item w3-button w3-hover-black">»</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        class HoverButton {
+            constructor(el) {
+                this.el = el;
+                this.hover = false;
+                this.calculatePosition();
+                this.attachEventsListener();
+            }
+
+            attachEventsListener() {
+                window.addEventListener('mousemove', e => this.onMouseMove(e));
+                window.addEventListener('resize', e => this.calculatePosition(e));
+            }
+
+            calculatePosition() {
+                TweenMax.set(this.el, {
+                    x: 0,
+                    y: 0,
+                    scale: 1
+                });
+                const box = this.el.getBoundingClientRect();
+                this.x = box.left + (box.width * 0.5);
+                this.y = box.top + (box.height * 0.5);
+                this.width = box.width;
+                this.height = box.height;
+            }
+
+            onMouseMove(e) {
+                let hover = false;
+                let hoverArea = (this.hover ? 0.7 : 0.5);
+                let x = e.clientX - this.x;
+                let y = e.clientY - this.y;
+                let distance = Math.sqrt(x * x + y * y);
+                if (distance < (this.width * hoverArea)) {
+                    hover = true;
+                    if (!this.hover) {
+                        this.hover = true;
+                    }
+                    this.onHover(e.clientX, e.clientY);
+                }
+
+                if (!hover && this.hover) {
+                    this.onLeave();
+                    this.hover = false;
+                }
+            }
+
+            onHover(x, y) {
+                TweenMax.to(this.el, 0.4, {
+                    x: (x - this.x) * 0.4,
+                    y: (y - this.y) * 0.4,
+                    scale: 1.15,
+                    ease: Power2.easeOut
+                });
+                this.el.style.zIndex = 10;
+            }
+            onLeave() {
+                TweenMax.to(this.el, 0.7, {
+                    x: 0,
+                    y: 0,
+                    scale: 1,
+                    ease: Elastic.easeOut.config(1.2, 0.4)
+                });
+                this.el.style.zIndex = 1;
+            }
+        }
+
+        const btn1 = document.querySelector('.lead');
+        new HoverButton(btn1);
+
+    </script>
+
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

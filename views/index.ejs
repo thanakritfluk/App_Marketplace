@@ -1,17 +1,414 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <p>Test 25</p>
-    <canvas id="bar-chart-horizontal" width="800" height="450"></canvas>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
-    <script src="/javascripts/index_script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/javascripts/index.js"></script>
+  <link rel="stylesheet" href="animate.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma" rel=stylesheet>
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel='stylesheet' href='/stylesheets/index.css' />
+  <title>Application Marketplace</title>
+</head>
+
+<body class="chfont bg">
+
+  <!--banner-->
+  <div class="container-fluid w3-section">
+    <img class="mySlides w3-animate-fading" id="banner" alt="Lights" width=100% src="/images/banner.jpg">
+    <div class="w3-display-topmiddle w3-text-white w3-jumbo" id="apptitle">APP MARKETPLACE</div>
+    <div class="w3-display-bottommiddle d-flex">
+      <div class="searchbar w3-animate-top">
+        <input class="search_input" type="text" name="" placeholder="Search...">
+        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!--category carousel-->
+  <div class="container">
+    <div class="row">
+      <div class="text-category">
+        <br /><br /><br />
+        <p>Category</p>
+      </div>
+      <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
+        <div class="MultiCarousel-inner">
+          <div class="item">
+            <div class="pad15">
+              <a href="/">
+                <p class="lead">Action</p>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="pad15">
+              <a href="/">
+                <p class="lead">Adventure</p>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="pad15">
+              <a href="/">
+                <p class="lead">Board</p>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="pad15">
+              <a href="/">
+                <p class="lead">Educational</p>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="pad15">
+              <a href="/">
+                <p class="lead">Family</p>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="pad15">
+              <a href="/">
+                <p class="lead">Music</p>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="pad15">
+              <a href="/">
+                <p class="lead">Racing</p>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="pad15">
+              <a href="/">
+                <p class="lead">Sports</p>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="pad15">
+              <a href="/">
+                <p class="lead">Word</p>
+              </a>
+            </div>
+          </div>
+          <hr />
+        </div>
+        <button class="btn btn-primary leftLst"></button>
+        <button class="btn btn-primary rightLst"></button>
+      </div>
+    </div>
+
+
+    <!--Top paid apps-->
+    <div class="row">
+      <hr />
+      <div class="col-md-12 text-center">
+        <br /><br /><br />
+        <hr />
+        <p id="toprank">Top Paid Apps</p>
+      </div>
+    </div>
+  </div>
+
+  <!--App card-->
+  <div class="container">
+    <div class="appcard row" style="height: 200px;">
+      <div class="leftcard column">
+        <div class="imagebox">
+          <p class="iconrank">#1
+            <img class="iconimg" src="/images/star.png">
+          </p>
+          <img class="appimg" src="/images/facebook.png">
+        </div>
+        <!--imagebox-->
+        <div class="infoappbox">
+          <p id="appname">Facebook</p>
+          <p>Rating: ######</p>
+          <p>Genre: Lifestyle</p>
+          <p>Price: Free</p>
+          <!--link to each app info page-->
+          <a href="/">
+            <div class="center-con">
+              <div class="round">
+                <div id="cta">
+                  <span class="arrow primera next "></span>
+                  <span class="arrow segunda next "></span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!--button-->
+        </div>
+        <!--infoappbox-->
+      </div>
+      <!--leftcolumn-->
+      <div class="rightcard column">
+        <div class="imagebox">
+          <p class="iconrank">#2
+            <img class="iconimg" src="/images/star.png">
+          </p>
+          <img class="appimg" src="/images/instagram.png">
+        </div>
+        <!--imagebox-->
+        <div class="infoappbox">
+          <p id="appname">Instagram</p>
+          <p>Rating: ######</p>
+          <p>Genre: Lifestyle</p>
+          <p>Price: Free</p>
+          <!--link to each app info page-->
+          <a href="/">
+            <div class="center-con">
+              <div class="round">
+                <div id="cta">
+                  <span class="arrow primera next "></span>
+                  <span class="arrow segunda next "></span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!--button-->
+        </div>
+        <!--infoappbox-->
+      </div>
+      <!--rightcolumn-->
+    </div>
+    <!--row-->
+  </div>
+  <!--container-->
+
+
+  <!--Top free app-->
+  <div class="container">
+    <div class="row">
+      <hr />
+      <div class="col-md-12 text-center">
+        <br /><br /><br />
+        <hr />
+        <p id="toprank">Top Free Apps</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="appcard row" style="height: 200px;">
+      <div class="leftcard column">
+        <div class="imagebox">
+          <p class="iconrank">#1
+            <img class="iconimg" src="/images/star.png">
+          </p>
+          <img class="appimg" src="/images/facebook.png">
+        </div>
+        <!--imagebox-->
+        <div class="infoappbox">
+          <p id="appname">Facebook</p>
+          <p>Rating: ######</p>
+          <p>Genre: Lifestyle</p>
+          <p>Price: Free</p>
+          <!--link to each app info page-->
+          <a href="/">
+            <div class="center-con">
+              <div class="round">
+                <div id="cta">
+                  <span class="arrow primera next "></span>
+                  <span class="arrow segunda next "></span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!--button-->
+        </div>
+        <!--infoappbox-->
+      </div>
+      <!--leftcolumn-->
+      <div class="rightcard column">
+        <div class="imagebox">
+          <p class="iconrank">#2
+            <img class="iconimg" src="/images/star.png">
+          </p>
+          <img class="appimg" src="/images/instagram.png">
+        </div>
+        <!--imagebox-->
+        <div class="infoappbox">
+          <p id="appname">Instagram</p>
+          <p>Rating: ######</p>
+          <p>Genre: Lifestyle</p>
+          <p>Price: Free</p>
+          <!--link to each app info page-->
+          <a href="/">
+            <div class="center-con">
+              <div class="round">
+                <div id="cta">
+                  <span class="arrow primera next "></span>
+                  <span class="arrow segunda next "></span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!--button-->
+        </div>
+        <!--infoappbox-->
+      </div>
+      <!--rightcolumn-->
+    </div>
+    <!--row-->
+  </div>
+  <!--container-->
+
+
+  <!--home button-->
+  <div class=" container fluid w3-section">
+    <div class="endpage row">
+      <div class="w3-center box">
+        <a href="/" class="btn btn-white btn-animation-1"><i class="fa fa-home" style="color: #4A4843;"
+            aria-hidden="true"></i></a>
+      </div>
+
+
+      <!--next and previous page button control-->
+      <div class="w3-center" id="nextpage">
+        <div class="w3-bar">
+          <a href="" id="back" class="w3-bar-item w3-button w3-hover-black">«</a>
+          <a href="" id="next" class="w3-bar-item w3-button w3-hover-black">»</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <script>
+    //back and next page button.
+    var url = window.location.href
+    var urlURL = new URL(url)
+    var urlsprit = url.split("/")
+    var param
+    if (urlsprit.includes("page")) { param = urlsprit[urlsprit.length - 1] } 
+    else { param = "1" }
+
+    var back = document.getElementById("back")
+    if (param == 1) { back.href = "" } 
+    else { back.href = "/page/" + (parseInt(param) - 1) }
+    var next = document.getElementById("next")
+    next.href = "/page/" + (parseInt(param) + 1)
+
+
+
+    //showing the list of apps.
+    /* var request = new XMLHttpRequest()
+    var appBox = document.getElementById("showapp")
+
+    request.open('GET', '/api/app/toprank/' + param, true)
+    request.onload = function () {
+      var data = JSON.parse(this.response)
+
+      if (request.status >= 200 && request.status < 400) {
+        appBox.innerHTML = ""
+        data.forEach(app => {
+
+          appBox.innerHTML += "" +
+            `<div class="w3-quarter" style="width: min-content; height: 400px;">` +
+            `<a id="apptilte" href="/info/` + app.app_id + `" >` +
+            `<img class="thumbnail img w3-hover-opacity" src="` + app.icon + `" style="width:120px; height: 120px;">` +
+            app.title + `</a>` +
+            `<p id="appinfo">` + app.price + `</p>` +
+            `</div>`
+        })
+      } else {
+        console.log('error')
+      }
+
+    }
+    request.send()
+
+
+
+    var requestfilter = new XMLHttpRequest()
+    var searchField = document.getElementById("searchDIV")
+
+    requestfilter.open('GET', '/api/app/filter', true)
+    requestfilter.onload = function () {
+
+      var data = JSON.parse(this.response)
+      if (requestfilter.status >= 200 && requestfilter.status < 400) {
+
+        data.forEach(element => {
+          searchField.innerHTML += `<a href="/info/` + element.app_id + `" style='display:none;'>` + element.app_name + `</a>`
+        });
+
+      } else {
+        console.log('error')
+      }
+
+    }
+    requestfilter.send()
+
+    function filterApp() {
+      var input = document.getElementById("searchFilter");
+      var filter = input.value.toUpperCase();
+      var afilter = searchField.getElementsByTagName('a')
+
+      for (let i = 0; i < afilter.length; i++) {
+        let txtValue = afilter[i].textContent || afilter[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1 && filter != "") {
+          afilter[i].style.display = "";
+        } else {
+          afilter[i].style.display = "none";
+        }
+      }
+    } */
+
+
+
+
+    /* var myIndex = 0;
+    carousel();
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        //hide
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}
+      //show
+    
+      x[myIndex-1].style.display = "block";
+      setTimeout(carousel, 6000); // Change image every 2 seconds
+    } */
+
+
+  </script>
+</body>
+
 </html>
