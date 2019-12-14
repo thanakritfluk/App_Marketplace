@@ -439,7 +439,10 @@ hr{
   /* justify-content: center; */
 }
 
-
+.none{
+  background: transparent;
+  border: none;
+}
 
 .round {
   position: absolute;

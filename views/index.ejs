@@ -30,8 +30,8 @@
     <div class="w3-display-topmiddle w3-text-white w3-jumbo" id="apptitle">APP MARKETPLACE</div>
     <div class="w3-display-bottommiddle d-flex">
       <div class="searchbar w3-animate-top">
-        <input class="search_input" type="text" name="" placeholder="Search...">
-        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+        <input id="search_txt" class="search_input" type="text" name="" placeholder="Search...">
+        <a href="" onclick="this.href='/search/'+document.getElementById('search_txt').value" class="search_icon"><i class="fas fa-search"></i></a>
       </div>
     </div>
   </div>
