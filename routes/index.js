@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
+var MongoClient = require('mongodb').MongoClient;
 
+var url = "mongodb+srv://reader:mr3TWRw1RcJeAQIt@cluster0-ngbcy.mongodb.net/test?retryWrites=true&w=majority";
 /* GET home page. */
 router.get('/', function(req, res, next) {
   getTopPaid()
     .then(function success(result) {
        res.render('index',  { 
-            data: result,
-            title: 'DAQ Basketball prediction',
-            current_year: current_year,            
+            data: result       
         });
     })
 });
