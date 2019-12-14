@@ -12,17 +12,15 @@ var getDashboard = function () {
       } else {
         console.log('Connection Established');
         var dbo = db.db("App_marketplace");
-        // dbo.collection("Android_app_free").find({}, { projection: { _id: 0, App_name:1} }).toArray(function(err, result) {
-        //   if (err) reject(err);
-        //   resolve(result[0]);
-        //   db.close();
-        // });
-        dbo.collection("Android_app_free").findOne({}, { projection: { _id: 0, App_name: 1}}, function(err, result) {
+        dbo.collection("Android_app_free").find({}).sort({App_allrating:-1}).limit(2).toArray(function(err, result) {
           if (err) reject(err);
-          resolve(result);
+          var ans = []
+          for(let i=0; i<2; i++){
+            ans.push(result[i])
+          }
+          resolve(ans);
           db.close();
         });
-        // resolve(dbo.collection("Android_app_free").count())
       }
     }); 
   });

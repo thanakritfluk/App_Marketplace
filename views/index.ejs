@@ -6,13 +6,8 @@
     
   </head>
   <body>
-    <%= data %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <p>Test 25</p>
-    <canvas id="bar-chart-horizontal" width="800" height="450"></canvas>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
-    <script src="/javascripts/index_script.js"></script>
+    <% data.forEach((data) => { %>
+      <div><%= data['App_name'] %></div>
+    <% }) %>
   </body>
 </html>
