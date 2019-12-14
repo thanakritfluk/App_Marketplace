@@ -23,7 +23,7 @@
             <div class="application-details">
                 <div class="header-box">
                     <div class="image col-2">
-                        <img src="/images/eg_app.png" style="width:150px;" />
+                        <img src="<%= detail['App_icon'] %>" style="width:150px;" />
                     </div>
                     <div class="box_format col-5">
                         <h1 class="box_format_head"><%= detail['App_name'] %></h1>
@@ -46,14 +46,14 @@
                 </div>
                 <hr class="sep_line app_desc" />
 
-                <div class="big_half_box">
-                    <div class="half_box">
+                <div class="big_half_box row">
+                    <div class="half_box col-8">
                         <h2 class="head_down">What's new</h2>
                         <p>
                             <%= detail['App_what_new'] %>
                         </p>
                     </div>
-                    <div class="half_box" style="text-align: center;">
+                    <div class="half_box col-3" style="text-align: center;">
                         <h2 class="head_down">Download</h2>
                         <a href="">
                             <img src="/images/appstore.png" class="download_button" />
@@ -87,7 +87,7 @@
                                 <h3 id="outOf"> out of 5</h3>
                             </div>
                             <div class="row amount_rate_box">
-                                <div class="amount_ratings">20990</div>
+                                <div class="amount_ratings"><%= detail['App_download_amount'] %></div>
                                 <div id="ratings_text">Ratings</div>
                             </div>
                         </div>
@@ -129,7 +129,94 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
-    <script src="/javascripts/rating_chart.js"></script>
+    <script>
+        var rating_data = '';
+
+        //mock json file for line chart
+        //mock json file for pie chart
+        var jsonfile = {
+            "App": [{
+              "App_ratings": ['<%- detail["App_ratings"][0] %>', '<%- detail["App_ratings"][1] %>', '<%- detail["App_ratings"][2] %>', '<%- detail["App_ratings"][03] %>',
+              '<%- detail["App_ratings"][4] %>']
+            }]
+          };
+        
+        rating_data = jsonfile.App.map(function(e) {
+            return e.App_ratings;
+        });;
+        
+        console.log(rating_data);
+        
+        var ctx = $("#rating_chart");
+        var config = {
+          type: "horizontalBar",
+          data: {
+            labels: ["1", "2", "3", "4", "5"],
+            datasets: [
+              {
+                label: "# of Ratings",
+                data: rating_data[0],
+                backgroundColor: [
+                  "rgba(255, 99, 132, 0.5)",
+                  "rgba(54, 162, 235, 0.5)",
+                  "rgba(255, 206, 86, 0.5)",
+                  "rgba(75, 192, 192, 0.5)",
+                  "rgba(153, 102, 255, 0.5)",
+                  "rgba(255, 159, 64, 0.5)"
+                ],
+                borderColor: [
+                  "rgba(255, 99, 132, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(255, 206, 86, 1)",
+                  "rgba(75, 192, 192, 1)",
+                  "rgba(153, 102, 255, 1)",
+                  "rgba(255, 159, 64, 1)"
+                ],
+                borderWidth: 0.5,
+                barPercentage: 0.4
+              }
+            ]
+          },
+          options: {
+            legend: {
+                labels: {
+                    fontColor: "white",
+                    fontSize: 14,
+                    fontFamily: "'Sulphur Point', sans-serif"
+                }
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        fontColor: "white",
+                        fontSize: 16,
+                        stepSize: 1000,
+                        beginAtZero: true,
+                        fontFamily: "'Sulphur Point', sans-serif"
+                    },
+                    gridLines: {
+                        color: "#666666"
+        
+                      },
+                }],
+                xAxes: [{
+                    ticks: {
+                        fontColor: "white",
+                        fontSize: 12,
+                        stepSize: 1000,
+                        beginAtZero: true,
+                        fontFamily: "'Sulphur Point', sans-serif"
+                    },
+                    gridLines: {
+                        color: "#666666"
+                      },
+        
+                }],
+        }
+          }};
+        
+        var rating_chart = new Chart(ctx, config);
+        </script>
 
 </body>
 

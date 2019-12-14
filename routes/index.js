@@ -26,11 +26,6 @@ router.get('/cate/:cate', function(req, res, next) {
   res.render('index', { title: 'Express' ,test: 'Instragram'});
 });
 
-router.get('/search/:search', function(req, res, next) {
-  var search = req.params.search;
-  res.render('index', { title: 'Express' ,test: 'Instragram'});
-});
-
 var getTopPaid = function () {
   var promise = new Promise(function (resolve, reject) {
     MongoClient.connect(url, function(err, db){

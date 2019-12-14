@@ -261,7 +261,7 @@ body::-webkit-scrollbar {
     margin-right: 1rem;
     letter-spacing: 2px;
     margin-left: 1rem;
-
+    width: auto;
   }
 
   #ratings_text {
@@ -304,4 +304,8 @@ body::-webkit-scrollbar {
     background-color: #dc3545;
     color: white;
     font-weight: 500;
+}
+
+.download_box {
+
 }
