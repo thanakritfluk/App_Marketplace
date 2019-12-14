@@ -135,16 +135,16 @@
           <p class="iconrank">#1
             <img class="iconimg" src="/images/star.png">
           </p>
-          <img class="appimg" src="/images/facebook.png">
+          <img class="appimg" src="<%= paid[0]['App_icon'] %>">
         </div>
         <!--imagebox-->
         <div class="infoappbox">
-          <p id="appname"><% data[0]['App_name'] %></p>
-          <p>Rating: ######</p>
-          <p>Genre: Lifestyle</p>
-          <p>Price: Free</p>
+          <p id="appname"><%= paid[0]['App_name'] %></p>
+          <p>Rating: <%= paid[0]['App_allrating'] %></p>
+          <p>Genre: <%= paid[0]['App_genre'] %></p>
+          <p>Price: <% if(paid[0]['App_price'] == 0){ %>Free<%} else { %><%=paid[0]['App_price'] %><%}%></p>
           <!--link to each app info page-->
-          <a href="/">
+          <a href="/detail/<%= paid[0]['App_name'] %>">
             <div class="center-con">
               <div class="round">
                 <div id="cta">
@@ -164,16 +164,16 @@
           <p class="iconrank">#2
             <img class="iconimg" src="/images/star.png">
           </p>
-          <img class="appimg" src="/images/instagram.png">
+          <img class="appimg" src="<%= paid[1]['App_icon'] %>">
         </div>
         <!--imagebox-->
         <div class="infoappbox">
-          <p id="appname">Instagram</p>
-          <p>Rating: ######</p>
-          <p>Genre: Lifestyle</p>
-          <p>Price: Free</p>
+            <p id="appname"><%= paid[1]['App_name'] %></p>
+            <p>Rating: <%= paid[1]['App_allrating'] %></p>
+            <p>Genre: <%= paid[1]['App_genre'] %></p>
+            <p>Price: <% if(paid[1]['App_price'] == 0){ %>Free<%} else { %><%=paid[1]['App_price'] %><%}%></p>
           <!--link to each app info page-->
-          <a href="/">
+          <a href="/detail/<%= paid[1]['App_name'] %>">
             <div class="center-con">
               <div class="round">
                 <div id="cta">
@@ -213,16 +213,16 @@
           <p class="iconrank">#1
             <img class="iconimg" src="/images/star.png">
           </p>
-          <img class="appimg" src="/images/facebook.png">
+          <img class="appimg" src="<%= free[0]['App_icon'] %>">
         </div>
         <!--imagebox-->
         <div class="infoappbox">
-          <p id="appname">Facebook</p>
-          <p>Rating: ######</p>
-          <p>Genre: Lifestyle</p>
-          <p>Price: Free</p>
+            <p id="appname"><%= free[0]['App_name'] %></p>
+            <p>Rating: <%= free[0]['App_allrating'] %></p>
+            <p>Genre: <%= free[0]['App_genre'] %></p>
+            <p>Price: <% if(free[0]['App_price'] == 0){ %>Free<%} else { %><%=free[0]['App_price'] %><%}%></p>
           <!--link to each app info page-->
-          <a href="/">
+          <a href="/detail/<%= free[0]['App_name'] %>">
             <div class="center-con">
               <div class="round">
                 <div id="cta">
@@ -242,16 +242,16 @@
           <p class="iconrank">#2
             <img class="iconimg" src="/images/star.png">
           </p>
-          <img class="appimg" src="/images/instagram.png">
+          <img class="appimg" src="<%= free[1]['App_icon'] %>">
         </div>
         <!--imagebox-->
         <div class="infoappbox">
-          <p id="appname">Instagram</p>
-          <p>Rating: ######</p>
-          <p>Genre: Lifestyle</p>
-          <p>Price: Free</p>
+            <p id="appname"><%= free[1]['App_name'] %></p>
+            <p>Rating: <%= free[1]['App_allrating'] %></p>
+            <p>Genre: <%= free[1]['App_genre'] %></p>
+            <p>Price: <% if(free[1]['App_price'] == 0){ %>Free<%} else { %><%=free[1]['App_price'] %><%}%></p>
           <!--link to each app info page-->
-          <a href="/detail">
+          <a href="/detail/<%= free[0]['App_name'] %>">
             <div class="center-con">
               <div class="round">
                 <div id="cta">
