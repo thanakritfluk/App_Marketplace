@@ -5,28 +5,29 @@ var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb+srv://reader:mr3TWRw1RcJeAQIt@cluster0-ngbcy.mongodb.net/test?retryWrites=true&w=majority";
 /* GET home page. */
 router.get('/', async function(req, res, next) {
+  res.redirect('/0')
+});
+
+router.get('/:id', async function(req, res, next) {
+  var skip = req.params.id;
   var paid
   var free
-  await getTopPaid()
+  await getTopPaid(skip)
     .then(function success(result) {
        paid = result;
     })
-  await getTopFree()
+  await getTopFree(skip)
     .then(function success(result) {
        free = result;
     })
   res.render('index',  { 
     paid: paid,
-    free: free
+    free: free,
+    now: skip
   });
 });
 
-router.get('/cate/:cate', function(req, res, next) {
-  var cate = req.params.cate;
-  res.render('index', { title: 'Express' ,test: 'Instragram'});
-});
-
-var getTopPaid = function () {
+var getTopPaid = function (skip) {
   var promise = new Promise(function (resolve, reject) {
     MongoClient.connect(url, function(err, db){
       if(err){
@@ -35,7 +36,7 @@ var getTopPaid = function () {
         console.log('Connection Established');
         var dbo = db.db("App_marketplace");
         var all = []
-        dbo.collection("Android_app_paid").find({}).sort({App_allrating:-1}).limit(2).toArray(function(err, result) {
+        dbo.collection("Android_app_paid").find({}).sort({Id:1}).skip(skip*2).limit(2).toArray(function(err, result) {
           if (err) reject(err);
           var ans = []
           for(let i=0; i<2; i++){
@@ -50,7 +51,7 @@ var getTopPaid = function () {
   return promise;
 };
 
-var getTopFree = function () {
+var getTopFree = function (skip) {
   var promise = new Promise(function (resolve, reject) {
     MongoClient.connect(url, function(err, db){
       if(err){
@@ -58,7 +59,7 @@ var getTopFree = function () {
       } else {
         console.log('Connection Established');
         var dbo = db.db("App_marketplace");
-        dbo.collection("Android_app_free").find({}).sort({App_allrating:-1}).limit(2).toArray(function(err, result) {
+        dbo.collection("Android_app_free").find({}).sort({Id:1}).skip(skip*2).limit(2).toArray(function(err, result) {
           if (err) reject(err);
           var ans = []
           for(let i=0; i<2; i++){

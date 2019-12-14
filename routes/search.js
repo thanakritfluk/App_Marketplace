@@ -7,10 +7,11 @@ var url = "mongodb+srv://reader:mr3TWRw1RcJeAQIt@cluster0-ngbcy.mongodb.net/test
 /* GET home page. */
 router.get('/:name', async function(req, res, next) {
   var name = req.params.name;
-  getDetail(name)
-  .then(function success(result) {
-     res.render('detail', { detail: result[0]});
-  })
+//   getDetail(name)
+//   .then(function success(result) {
+//      res.render('detail', { detail: result[0]});
+//   })
+res.render('search', { detail: '..'});
 });
 
 var getDetail = function (name) {
