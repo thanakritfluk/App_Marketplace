@@ -33,7 +33,11 @@ var getTopPaid = function () {
         var dbo = db.db("App_marketplace");
         dbo.collection("Android_app_free").find({}).sort({App_allrating:1}).limit(2).toArray(function(err, result) {
           if (err) reject(err);
-          resolve(result);
+          var ans = []
+          for(let i=0; i<2; i++){
+            ans.push(result[i])
+          }
+          resolve(ans);
           db.close();
         });
       }
