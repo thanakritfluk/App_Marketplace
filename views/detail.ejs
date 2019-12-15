@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Detail</title>
+    <link rel="stylesheet" href="/stylesheets/detail_style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body class="page">
+    <div class="page_child">
+        <nav class="topnav navbar-dark bg-dark">
+            <a class="logo" href="/">APP MARKETPLACE</a>
+        </nav>
+
+        <div class="application-box">
+            <div class="application-details">
+                <div class="header-box">
+                    <div class="image col-2">
+                        <img src="<%= detail['App_icon'] %>" style="width:150px;" />
+                    </div>
+                    <div class="box_format col-5">
+                        <h1 class="box_format_head"><%= detail['App_name'] %></h1>
+                        <h3 class="age_res_head"><%= detail['App_restriction'] %></h3>
+                        <h3 class="price_head"><% if(detail['App_price'] == 0){ %>Free<%} else { %>$<%=detail['App_price'] %><%}%></h3>
+                        <!-- if price == 0 then Free -->
+                        <h3 class="genre_head"><%= detail['App_genre'] %></h3>
+                    </div>
+                    <div class="ava-box">Available</div>
+                    <!-- <div class="unava-box">unavailable</div> -->
+
+                </div>
+
+                <hr class="sep_line app_desc" />
+                <div class="box_format">
+                    <h2 class="box_format_head">Description</h2>
+                    <p class="app_desc">
+                            <%= detail['App_description'] %>
+                    </p>
+                </div>
+                <hr class="sep_line app_desc" />
+
+                <div class="big_half_box row">
+                    <div class="half_box col-8">
+                        <h2 class="head_down">What's new</h2>
+                        <p>
+                            <%= detail['App_what_new'] %>
+                        </p>
+                    </div>
+                    <div class="half_box col-3" style="text-align: center;">
+                        <h2 class="head_down">Download</h2>
+                        
+                        <% if(ios_url){%>  <a href="<%= ios_url %>">
+                            <img src="/images/appstore.png" class="download_button" />
+                        </a>   
+                         <%   }%>
+                        
+                         <% if(android_url){%>  <a href="<%= android_url %>">
+                        <a href="<%= android_url %>">
+                            <img src="/images/playstore.png" class="download_button" />
+                        </a>
+                        <%   }%>
+
+                    </div>
+                </div>
+
+                <hr class="sep_line app_desc" />
+
+                <div class="box_format">
+                    <h2 class="box_format_head">Preview</h2>
+                    <div class="preview-box" style="margin-top: 1rem;">
+                        <% detail['App_screenshot_url'].forEach((image) => {
+                            %>
+                            <img class="preview-img" src="<%= image %>" style="width:250px" />
+                            <%
+                        }) %>
+                    </div>
+                </div>
+                <hr class="sep_line app_desc" />
+
+                <div class="box_format">
+                    <h2 class="box_format_head">Ratings</h2>
+                    <div class="half_rating">
+                        <div class="rating-con container">
+                            <div class="row">
+                                <h1 class="big_rating"><%= detail['App_allrating'] %></h1>
+                                <h3 id="outOf"> out of 5</h3>
+                            </div>
+                            <div class="row amount_rate_box">
+                                <div class="rating-div-box">
+                                    <div class="amount_ratings"><%= detail['App_download_amount'] %></div>
+                                    <div id="ratings_text">Ratings</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="rating_chart"></canvas>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 
+    <div class="container ">
+
+      <div class="row detail-content">
+
+        <div class="col-sm-4">
+          test
+        </div>
+        <div class="col-sm-6">
+          test
+        </div>
+      </div>
+
+    </div> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+    <script>
+        var rating_data = '';
+
+        //mock json file for line chart
+        //mock json file for pie chart
+        var jsonfile = {
+            "App": [{
+              "App_ratings": ['<%- detail["App_ratings"][0] %>', '<%- detail["App_ratings"][1] %>', '<%- detail["App_ratings"][2] %>', '<%- detail["App_ratings"][03] %>',
+              '<%- detail["App_ratings"][4] %>']
+            }]
+          };
+        
+        rating_data = jsonfile.App.map(function(e) {
+            return e.App_ratings;
+        });;
+        
+        console.log(rating_data);
+        
+        var ctx = $("#rating_chart");
+        var config = {
+          type: "horizontalBar",
+          data: {
+            labels: ["1", "2", "3", "4", "5"],
+            datasets: [
+              {
+                label: "# of Ratings",
+                data: rating_data[0],
+                backgroundColor: [
+                  "rgba(255, 99, 132, 0.5)",
+                  "rgba(54, 162, 235, 0.5)",
+                  "rgba(255, 206, 86, 0.5)",
+                  "rgba(75, 192, 192, 0.5)",
+                  "rgba(153, 102, 255, 0.5)",
+                  "rgba(255, 159, 64, 0.5)"
+                ],
+                borderColor: [
+                  "rgba(255, 99, 132, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(255, 206, 86, 1)",
+                  "rgba(75, 192, 192, 1)",
+                  "rgba(153, 102, 255, 1)",
+                  "rgba(255, 159, 64, 1)"
+                ],
+                borderWidth: 0.5,
+                barPercentage: 0.4
+              }
+            ]
+          },
+          options: {
+            legend: {
+                labels: {
+                    fontColor: "white",
+                    fontSize: 14,
+                    fontFamily: "'Sulphur Point', sans-serif"
+                }
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        fontColor: "white",
+                        fontSize: 16,
+                        stepSize: 1000,
+                        beginAtZero: true,
+                        fontFamily: "'Sulphur Point', sans-serif"
+                    },
+                    gridLines: {
+                        color: "#666666"
+        
+                      },
+                }],
+                xAxes: [{
+                    ticks: {
+                        fontColor: "white",
+                        fontSize: 12,
+                        stepSize: 1000,
+                        beginAtZero: true,
+                        fontFamily: "'Sulphur Point', sans-serif"
+                    },
+                    gridLines: {
+                        color: "#666666"
+                      },
+        
+                }],
+        }
+          }};
+        
+        var rating_chart = new Chart(ctx, config);
+        </script>
+
+</body>
+
+</html>

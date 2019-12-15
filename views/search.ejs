@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/javascripts/index.js"></script>
+  <link rel="stylesheet" href="animate.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma" rel=stylesheet>
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel='stylesheet' href='/stylesheets/index.css' />
+  <title>Application Marketplace</title>
+</head>
+
+<body class="chfont bg">
+
+  <!--banner-->
+  <div class="container-fluid w3-section">
+    <img class="mySlides w3-animate-fading" id="banner" alt="Lights" width=100% src="/images/banner.jpg">
+    <div class="w3-display-topmiddle w3-text-white w3-jumbo" id="apptitle">APP MARKETPLACE</div>
+    <div class="w3-display-bottommiddle d-flex">
+     <div class="searchbar w3-animate-top">
+        <input id="search_txt" class="search_input" type="text" name="" placeholder="Search...">
+        <a href="" onclick="this.href='/search/'+document.getElementById('search_txt').value" class="search_icon"><i class="fas fa-search"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!--category carousel-->
+  <div class="container">
+        <div class="row">
+          <div class="text-category">
+            <br /><br /><br />
+            <p>Category</p>
+          </div>
+          
+          <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
+            <div class="MultiCarousel-inner">
+                <div class="item">
+                    <div class="pad15">
+                        <a href="/">
+                        <p class="lead">HOME</p>
+                        </a>
+                    </div>
+                </div>
+              <div class="item">
+                <div class="pad15">
+                  <a href="/Filter/GAME">
+                    <p class="lead">GAME</p>
+                  </a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <a href="/Filter/APPLICATION">
+                    <p class="lead">APPLICATION</p>
+                  </a>
+                </div>
+              </div>
+              
+              <hr />
+            </div>
+          </div>
+        </div>
+
+    <div class="container">
+        <div class="row">
+          <hr />
+          <div class="col-md-12 text-center">
+            <br /><br /><br />
+            <hr />
+            <p id="toprank">Search result</p>
+          </div>
+        </div>
+    </div>
+        <%  var i = 0;
+            App.forEach((app) => {
+                if(i%2==0){%>
+                    <div class="row">
+                    <div class="container">
+                    <div class="appcard row" style="height: 200px;">
+                    <div class="leftcard column">
+                        <div class="imagebox">
+                        <p class="iconrank">#<%= i+1 %>
+                        </p>
+                        <img class="appimg" src="<%= app['App_icon'] %>">
+                        </div>
+                        <div class="infoappbox">
+                            <p id="appname"><%= app['App_name'] %></p>
+                            <p>Rating: <%= app['App_allrating'] %></p>
+                            <p>Genre: <%= app['App_genre'] %></p>
+                            <p>Price: <% if(app['App_price'] == 0){ %>Free<%} else { %><%=app['App_price'] %><%}%></p>
+                        <a href="/detail/<%= app['App_name'] %>">
+                            <div class="center-con">
+                            <div class="round">
+                                <div id="cta">
+                                <span class="arrow primera next "></span>
+                                <span class="arrow segunda next "></span>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+                    <%i++;%>
+                <%}else{%>
+                    <div class="rightcard column">
+                        <div class="imagebox">
+                        <p class="iconrank">#<%= i+1 %>
+                        </p>
+                        <img class="appimg" src="<%= app['App_icon'] %>">
+                        </div>
+                        <div class="infoappbox">
+                            <p id="appname"><%= app['App_name'] %></p>
+                            <p>Rating: <%= app['App_allrating'] %></p>
+                            <p>Genre: <%= app['App_genre'] %></p>
+                            <p>Price: <% if(app['App_price'] == 0){ %>Free<%} else { %><%=app['App_price'] %><%}%></p>
+                        <a href="/detail/<%= app['App_name'] %>">
+                            <div class="center-con">
+                            <div class="round">
+                                <div id="cta">
+                                <span class="arrow primera next "></span>
+                                <span class="arrow segunda next "></span>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    <%i++;
+                }%>
+        <%}) %>
+   
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
