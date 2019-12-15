@@ -71,11 +71,11 @@ async function insertOne(os_name,data,collection_name,time) {
                 App_name: data["title"],
                 App_restriction: data["content_rating"],
                 App_platform: "Android",
-                App_genre: data["category"],
+                App_genre: data["cat_keys"][1],
                 App_version:data["version"],
                 App_screenshot_url: data["screenshots"],
                 App_description: data["description"],
-                App_allrating: data["rating"],
+                App_allrating: Number.parseFloat(data["rating"]).toFixed(2),
                 App_download_amount: data["downloads_max"],
                 App_store_url: data["market_url"],
                 App_ratings:[
@@ -86,29 +86,37 @@ async function insertOne(os_name,data,collection_name,time) {
                     data["ratings_5"]
                 ],
                 App_icon: data["icon"],
-                App_price: data["price_numeric"],
+                App_price: Number.parseFloat(data["price_numeric"]).toFixed(2),
                 App_video_url: data["promo_video"],
-                App_what_new: data["what_is_new"]
+                App_what_new: data["what_is_new"],
+              Id: time
             
             }
 
         }
         if(os_name=="Ios"){
-
+            var genres_ios;
+            if(data["genres"][0]=="Games"){
+              genres_ios = "GAME"
+            }else{
+              genres_ios = "APPLICATION"
+            }
+          
             query = {
                 App_name: data["trackCensoredName"],
                 App_restriction: data["trackContentRating"],
                 App_platform: "Ios",
-                App_genre: data["primaryGenreName"],
+                App_genre: genres_ios,
                 App_version:data["version"],
                 App_screenshot_url: data["screenshotUrls"],
                 App_description: data["description"],
-                App_allrating: data["averageUserRating"],
+                App_allrating: Number.parseFloat(data["averageUserRating"]).toFixed(2),
                 App_download_amount: data["userRatingCount"],
                 App_store_url: data["trackViewUrl"],
                 App_icon: data["artworkUrl100"],
-                App_price: data["price"],
-                App_what_new: data["releaseNotes"]
+                App_price: Number.parseFloat(data["price"]).toFixed(2),
+                App_what_new: data["releaseNotes"],
+              Id: time
             }
         }
 

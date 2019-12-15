@@ -32,7 +32,7 @@
                         <!-- if price == 0 then Free -->
                         <h3 class="genre_head"><%= detail['App_genre'] %></h3>
                     </div>
-                    <div class="ava-box"><%= url %></div>
+                    <div class="ava-box">Available</div>
                     <!-- <div class="unava-box">unavailable</div> -->
 
                 </div>
@@ -55,12 +55,18 @@
                     </div>
                     <div class="half_box col-3" style="text-align: center;">
                         <h2 class="head_down">Download</h2>
-                        <a href="">
+                        
+                        <% if(ios_url){%>  <a href="<%= ios_url %>">
                             <img src="/images/appstore.png" class="download_button" />
-                        </a>
-                        <a href="<%= detail['App_store_url'] %>">
+                        </a>   
+                         <%   }%>
+                        
+                         <% if(android_url){%>  <a href="<%= android_url %>">
+                        <a href="<%= android_url %>">
                             <img src="/images/playstore.png" class="download_button" />
                         </a>
+                        <%   }%>
+
                     </div>
                 </div>
 
@@ -87,8 +93,11 @@
                                 <h3 id="outOf"> out of 5</h3>
                             </div>
                             <div class="row amount_rate_box">
-                                <div class="amount_ratings"><%= detail['App_download_amount'] %></div>
-                                <div id="ratings_text">Ratings</div>
+                                <div class="rating-div-box">
+                                    <div class="amount_ratings"><%= detail['App_download_amount'] %></div>
+                                    <div id="ratings_text">Ratings</div>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>

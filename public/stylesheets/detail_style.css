@@ -165,10 +165,11 @@ nav ul {
 }
 
 .download_button{
-    width: 6rem;
-    height: 2rem;
+    width: 6.5rem;
+    height: 2.5rem;
     display: block;
     margin-bottom: 1rem;
+    margin-left: 3.5rem;
 }
 
 .download_button:hover {
@@ -262,8 +263,10 @@ body::-webkit-scrollbar {
     font-weight: bold;
     margin-right: 1rem;
     letter-spacing: 2px;
-    margin-left: 1rem;
     width: auto;
+    margin-left: 2.5rem;
+    letter-spacing: -0.02px;
+    line-height: 40px;
   }
 
   #ratings_text {
@@ -272,6 +275,7 @@ body::-webkit-scrollbar {
     font-weight: bold;
     margin-right: 1rem;
     letter-spacing: 2px;
+    margin-left: 2.5rem;
 
   }
 
@@ -308,6 +312,6 @@ body::-webkit-scrollbar {
     font-weight: 500;
 }
 
-.download_box {
-
+.rating-div-box{
+    margin-left: 4px;
 }
