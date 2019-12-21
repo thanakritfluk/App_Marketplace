@@ -9,9 +9,10 @@ __Software and knowledge engineering, Kasetsart University__
 | Pichaaun Popukde | 6010545862 |
 | Sorrawit Tantharatana|6010545943|
 | Poonnanun Poonnopathum |6010546699 |
-|Raksani Khunamas|6010546711|
-<!-- ## For Developer -->
-> Below is the method for set up the project.
+| Raksani Khunamas | 6010546711 |
+
+## For Developer
+*Below is the method for set up the project.*
 ### Dependency
  + [nodejs](https://nodejs.org/en/download/) latest version
 
