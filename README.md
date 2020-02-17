@@ -12,6 +12,9 @@ __Software and knowledge engineering, Kasetsart University__
 | Poonnanun Poonnopathum |6010546699 |
 | Raksani Khunamas | 6010546711 | 
 
+## If google link cann't be open use this link to view instead
++ [Glitch website](https://app-marketplace.glitch.me/)
+
 ## For Developer
 *Below is the method for set up the project.*
 ### Dependency
